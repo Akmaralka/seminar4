@@ -1,15 +1,15 @@
-from mytree import heap_sort
+from mytree import Heap
 
 with open("words.txt") as file:
     arr = file.readlines()
 
-words = []
+heap = Heap()
 
 for i in range(len(arr)-1):
     arr[i] = arr[i][:len(arr[i])-1]
-    words.append(arr[i])
+    heap.insert(arr[i])
 
-print(words)
-heap_size = len(words)
-heap_sort(words, heap_size)
-print(words)
+print(heap)
+heap_size = heap.length()
+heap.heap_sort(heap_size)
+print(heap)
